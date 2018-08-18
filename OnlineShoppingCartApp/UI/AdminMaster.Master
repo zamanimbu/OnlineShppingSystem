@@ -1,0 +1,106 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="OnlineShoppingCartApp.UI.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head" runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Online Shopping Cart</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/Custom-Cs.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="headCOntentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+   
+</head>
+<body>
+   <form id="form" runat="server">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Default.aspx"><span>
+                    <img alt="Logo" src="../Image/Logo/logo.png" height="30"></span>Gadget Hunter </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="Home.aspx">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddProduct.aspx">Add Product</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="AddBrand.aspx">Add Brand</a></li>
+                                    <li><a href="AddCategory.aspx">Add Category</a></li>
+                                    <li><a href="AddSubCategory.aspx">Add Sub Category</a></li>
+                                    <li><a href="AddSize.aspx">Add Size</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <asp:Button ID="SignOutButton" runat="server" Class="btn btn-default navbar-btn" Text="Logout"  />
+                            </li>
+
+                        </ul>
+                    </div>
+        </div>
+    </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="mainContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <br />
+    <br />
+
+    <!--- Footer  -->
+
+
+    <br />
+    <div id="footer">
+        <hr />
+        <footer>
+            <div class="container">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017 Null Exeption &middot; <a href="Home.aspx">Home</a> &middot; <a href="#">About</a> &middot; <a href="#">Contact</a> &middot; <a href="#"></a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!--- Footer -->
+    <script src="../Scripts/jquery-3.2.1.min.js"></script>
+    <script src="../Scripts/jquery.validate.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).bind("load", function () {
+            var footer = $("#footer");
+            var pos = footer.position();
+            var height = $(window).height();
+            height = height - pos.top;
+            height = height - footer.height();
+            if (height > 0) {
+                footer.css({
+                    'margin-top': height + 'px'
+                });
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="scriptContent" runat="server"></asp:ContentPlaceHolder>
+
+
+</body>
+
+</html>
